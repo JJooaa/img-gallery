@@ -1,0 +1,13 @@
+# Netlify configuration for SPA client-side routing
+# This ensures all routes are handled by the React app
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Redirect all requests to index.html for client-side routing
+# This allows TanStack Router to handle all routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
